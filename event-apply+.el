@@ -30,7 +30,7 @@
 ;;; Commentary:
 ;;
 ;; This file defines a set of extensions to the
-;; (`event-apply-modifier') command to allow for more than a single
+;; (`event-apply-*-modifier') commands to allow for more than a single
 ;; modifier to be applied.  This will allow you to enter more complex
 ;; key combinations in environments without the ability to enter them
 ;; directly via the input device.
@@ -82,7 +82,8 @@
 ;;  etc...
 
 ;; -------------------------------------------------------------------
-;;; Code:
+;;; Code
+
 (defun event-apply+-modifiers (event modifier-list)
   "Apply a set of modifier flags to EVENT.
 
@@ -167,11 +168,11 @@ to end entering mnemonic characters.
 				    modifier-list))))
 
 ;; -------------------------------------------------------------------
-;;;; Two Key modifier functions:
+;;;; Two Key modifier functions
 ;; -------------------------------------------------------------------
 
 ;; -------------------------------------------------------------------
-;;; Alt + modifiers
+;;;;; Alt + modifiers
 ;; -------------------------------------------------------------------
 
 (defun event-apply+-alt-control-modifier (_ignore-prompt)
@@ -215,7 +216,7 @@ to end entering mnemonic characters.
 				  '((alt 22 "A-") (super 23 "s-")))))
 
 ;; -------------------------------------------------------------------
-;;; Control + modifiers
+;;;;; Control + modifiers
 ;; -------------------------------------------------------------------
 
 (defun event-apply+-control-hyper-modifier (_ignore-prompt)
@@ -251,7 +252,7 @@ to end entering mnemonic characters.
 				  '((control 26 "C-") (super 23 "s-")))))
 
 ;; -------------------------------------------------------------------
-;;; Hyper + modifiers
+;;;;; Hyper + modifiers
 ;; -------------------------------------------------------------------
 
 (defun event-apply+-hyper-meta-modifier (_ignore-prompt)
@@ -279,7 +280,7 @@ to end entering mnemonic characters.
 				  '((hyper 24 "H-") (super 23 "s-")))))
 
 ;; -------------------------------------------------------------------
-;;; Meta + modifiers
+;;;;; Meta + modifiers
 ;; -------------------------------------------------------------------
 
 (defun event-apply+-meta-shift-modifier (_ignore-prompt)
@@ -299,7 +300,7 @@ to end entering mnemonic characters.
 				  '((meta 27 "M-") (super 23 "s-")))))
 
 ;; -------------------------------------------------------------------
-;;; Shift + modifiers
+;;;;; Shift + modifiers
 ;; -------------------------------------------------------------------
 
 (defun event-apply+-shift-super-modifier (_ignore-prompt)
